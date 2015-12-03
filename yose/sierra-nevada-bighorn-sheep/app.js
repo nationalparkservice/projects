@@ -465,7 +465,8 @@ var NPMap = {
   }, {
     js: 'https://code.jquery.com/jquery-1.11.0.min.js'
   }],
-  zoom: 15
+  zoom: 15,
+  maxZoom: 15
 };
 var s = document.createElement('script');
 
