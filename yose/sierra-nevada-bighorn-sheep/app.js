@@ -459,7 +459,7 @@ var NPMap = {
       callback();
     }
   },
-  maxZoom: 15,
+  
   plugins: [{
     js: 'http://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/libs/LeafletPlayback.min.js'
   }, {
