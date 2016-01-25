@@ -22,8 +22,8 @@ var NPMap = {
     'mapbox-outdoors'
   ],
   center: {
-    lat: 37.706514,
-    lng: -119.349939
+    lat: 37.744275,
+    lng: -119.330004
   },
   fullscreenControl: true,
   hooks: {
@@ -54,7 +54,7 @@ var NPMap = {
   }, {
     js: 'https://code.jquery.com/jquery-1.11.0.min.js'
   }],
-  zoom: 15,
+  zoom: 13,
   maxZoom: 15
 };
 var s = document.createElement('script');
