@@ -22,8 +22,8 @@ var NPMap = {
     'mapbox-outdoors'
   ],
   center: {
-    lat: 37.706514,
-    lng: -119.349939
+    lat: 37.720425,
+    lng: -119.372319
   },
   fullscreenControl: true,
   hooks: {
@@ -43,7 +43,7 @@ var NPMap = {
         tickLen: 3000
       });
       $(document).ready(function () {
-        $('div.leaflet-bottom.leaflet-left').prepend('<p><b>3/28/2015 to 5/17/2015</b></p>');
+        $('div.leaflet-bottom.leaflet-left').prepend('<p><b>RAM S295: 3/28/2015 to 5/17/2015</b></p>');
       });
       callback();
     }
@@ -54,7 +54,7 @@ var NPMap = {
   }, {
     js: 'https://code.jquery.com/jquery-1.11.0.min.js'
   }],
-  zoom: 15,
+  zoom: 14,
   maxZoom: 15
 };
 var s = document.createElement('script');
