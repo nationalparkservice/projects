@@ -54,19 +54,68 @@ var NPMap = {
   hooks: {
     init: function (callback) {
       L.npmap.util._.appendCssFile('http://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/css/app.css');
-      new L.Playback(NPMap.config.L, data, null, {
-        dateControl: false,
-        marker: {
-          icon: L.npmap.icon.maki({
-            'marker-color': '#ffa448',
-            'marker-size': 'medium',
-            'marker-symbol': 'circle-stroked'
-          })
-        },
-        playControl: true,
-        sliderControl: true,
-        tickLen: 3000
-      });
+
+      var _colorIdx = 0,
+          _colors = [
+            '#ff0066',
+            '#3366ff'
+          ];
+          
+      function _assignColor() {
+          return _colors[_colorIdx++%2];
+      }
+      
+      // =====================================================
+      // =============== Playback ============================
+      // =====================================================
+
+      // Playback options
+      var playbackOptions = {        
+          // layer and marker options
+          layer: {
+              pointToLayer : function(featureData, latlng){
+                  var result = {};
+                  
+                  if (featureData && featureData.properties && featureData.properties.path_options){
+                      result = featureData.properties.path_options;
+                  }
+                  
+                  if (!result.radius){
+                      result.radius = 5;
+                  }
+                  
+                  return new L.CircleMarker(latlng, result);
+              }
+          },
+
+          dateControl: false,
+          playControl: true,
+          sliderControl: true,
+          tickLen: 3000,
+          
+          
+          marker: function(){
+              return {
+                  icon: L.npmap.icon.maki({
+                    'marker-color': _assignColor(),
+                    'marker-size': 'medium',
+                    'marker-symbol': 'circle-stroked'
+                  }) 
+              };
+          }        
+      };
+
+
+
+
+
+
+
+
+
+
+      
+      new L.Playback(NPMap.config.L, data, null, playbackOptions);
       $(document).ready(function () {
         $('div.leaflet-bottom.leaflet-left').prepend('<p><b>3/28/2015 to 5/17/2015</b></p>');
       });
