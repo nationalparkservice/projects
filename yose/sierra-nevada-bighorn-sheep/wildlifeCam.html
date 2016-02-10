@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NPMap Layers Control Example</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="http://www.nps.gov/lib/bootstrap/3.3.2/css/nps-bootstrap.min.css" rel="stylesheet">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body,
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+  	<div id="map" style="height:100%;width:100%;"></div>
+    <script>
+      var App = {
+        fisher: null,
+        fox: null,
+        bear: null,
+        map: null,
+        check: function (el) {
+          var layer = App[el.id];
+
+          if (el.checked) {
+            App.map.addLayer(layer);
+          } else {
+            App.map.removeLayer(layer);
+          }
+
+          return false;
+        }
+      };
+      var NPMap = {
+        center: {
+          lat: 37.87810535842238,
+          lng: -119.54910278320312
+        },
+        div: 'map',
+        hooks: {
+          init: function (callback) {
+            App.map = NPMap.config.L;
+            App.fox = new L.LayerGroup().addTo(App.map);
+            App.fisher = new L.LayerGroup().addTo(App.map);
+            App.bear = new L.LayerGroup().addTo(App.map);
+
+            L.marker([38.181767, -119.581869]).bindPopup('<h1>Fox</h1><p>some text</p><img src="IMG_0376.JPG" style="width:304px;height:228px;"><a href="http://www.nps.gov/yose/learn/nature/mammals.htm" target="_blank">learn more</a>').addTo(App.fox),
+        		L.marker([37.637480, -119.688473]).bindPopup('<h1>Fisher</h1><img src="IMG_0802.JPG" style="width:304px;height:228px;"><a href="http://www.nps.gov/yose/learn/nature/mammals.htm" target="_blank">learn more</a>').addTo(App.fisher),
+        		L.marker([38.178185, -119.570807]).bindPopup('<h1>Fox</h1><img src="IMG_0376.JPG" style="width:304px;height:228px;"><a href="http://www.nps.gov/yose/learn/nature/mammals.htm" target="_blank">learn more</a>').addTo(App.fox),
+        		L.marker([37.533760, -119.632297]).bindPopup('<h1>Fisher</h1><img src="IMG_0802.JPG" style="width:304px;height:228px;"><a href="http://www.nps.gov/yose/learn/nature/mammals.htm" target="_blank">learn more</a>').addTo(App.fisher);
+            L.marker([37.868493, -119.604376]).bindPopup('<h1>Fox</h1><p>some text</p><img src="IMG_0376.JPG" style="width:304px;height:228px;"><a href="http://www.nps.gov/yose/learn/nature/mammals.htm" target="_blank">learn more</a>').addTo(App.bear),
+
+            callback();
+          }
+        },
+        legendControl: {
+          html: '' +
+            '<form>' +
+              '<div class="checkbox" style="margin-top:0;">' +
+                '<label>' +
+                  '<input id="fox" onclick="App.check(this);" style="margin-top:5px;" type="checkbox" checked>' +
+                  'Fox' +
+                '</label>' +
+              '</div>' +
+              '<div class="checkbox" style="margin-bottom:0;">' +
+                '<label>' +
+                  '<input id="fisher" onclick="App.check(this);" style="margin-top:5px;" type="checkbox" checked>' +
+                  'Fisher' +
+                '</label>' +
+              '</div>' +
+              '<div class="checkbox" style="margin-bottom:0;">' +
+                '<label>' +
+                  '<input id="bear" onclick="App.check(this);" style="margin-top:5px;" type="checkbox" checked>' +
+                  'Bear' +
+                '</label>' +
+              '</div>' +
+            '</form>' +
+          '',
+          position: 'topright'
+        },
+        zoom: 9
+      };
+      var script = document.createElement('script');
+
+      script.src = 'http://www.nps.gov/lib/npmap.js/3.0.7/npmap-bootstrap.min.js';
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
