@@ -84,7 +84,7 @@ var NPMap = {
                       result.radius = 5;
                   }
                   
-                  return new L.CircleMarker(latlng, result, fillColor: _assignColor());
+                  return new L.CircleMarker(latlng, result, {fillColor: _assignColor()});
               }
           },
 
