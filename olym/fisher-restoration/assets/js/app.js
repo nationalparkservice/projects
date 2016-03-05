@@ -73,7 +73,7 @@ var App = {
                   picture.setAttribute('data-target', '#pictureModal');
                   picture.addEventListener('click', function () {
                     var image = document.getElementById('modalImage');
-                    image.setAttribute('src', './assets/img/' + query[resultIndex]['Survey Year'] + '-' + query[resultIndex]['Hex ID'] + '.jpg');
+                    image.setAttribute('src', 'assets/img/' + query[resultIndex]['Survey Year'] + '-' + query[resultIndex]['Hex ID'] + '.jpg');
                   });
                   this.appendChild(picture);
                   document.getElementById('pictureModalLabel').innerHTML = 'Hex ' + query[resultIndex]['Hex ID'] + ' ' + query[resultIndex]['Survey Year'] + ' Camera Trap Photo';
