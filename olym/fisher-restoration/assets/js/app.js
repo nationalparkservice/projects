@@ -76,7 +76,7 @@ var App = {
                     image.setAttribute('src', 'assets/img/' + query[resultIndex]['Survey Year'] + '-' + query[resultIndex]['Hex ID'] + '.jpg');
                   });
                   this.appendChild(picture);
-                  document.getElementById('pictureModalLabel').innerHTML = 'Hex ' + query[resultIndex]['Hex ID'] + ' ' + query[resultIndex]['Survey Year'] + ' Camera Trap Photo';
+                  document.getElementById('pictureModalLabel').innerHTML = 'Hex ' + query[resultIndex]['Hex ID'] + ' ' + query[resultIndex]['Survey Year'] + ' Camera Station Photo';
                 }
               });
             });
