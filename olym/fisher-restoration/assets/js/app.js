@@ -109,13 +109,13 @@ var NPMap = {
   hooks: {
     preinit: function (callback) {
       L.npmap.util._.appendJsFile([
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'
+        'https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'
       ], function () {
         L.npmap.util._.appendJsFile([
-          'http://www.nps.gov/lib/bootstrap/3.3.2/js/nps-bootstrap.min.js'
+          'https://www.nps.gov/lib/bootstrap/3.3.2/js/nps-bootstrap.min.js'
         ], function () {
           L.npmap.util._.appendCssFile([
-            'http://www.nps.gov/lib/bootstrap/3.3.2/css/nps-bootstrap.min.css'
+            'https://www.nps.gov/lib/bootstrap/3.3.2/css/nps-bootstrap.min.css'
           ], function () {
             $.getJSON('data/data.json', function (json) {
               $.each(json, function (key, val) {
@@ -179,6 +179,6 @@ var NPMap = {
 
 (function () {
   var s = document.createElement('script');
-  s.src = 'http://www.nps.gov/lib/npmap.js/3.0.13/npmap-bootstrap.min.js';
+  s.src = 'https://www.nps.gov/lib/npmap.js/3.0.13/npmap-bootstrap.min.js';
   document.body.appendChild(s);
 })();
