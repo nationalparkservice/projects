@@ -470,5 +470,5 @@ var NPMap = {
 };
 var s = document.createElement('script');
 
-s.src = 'http://www.nps.gov/lib/npmap.js/3.0.8/npmap-bootstrap.min.js';
+s.src = 'https://www.nps.gov/lib/npmap.js/3.0.14/npmap-bootstrap.min.js';
 document.body.appendChild(s);
