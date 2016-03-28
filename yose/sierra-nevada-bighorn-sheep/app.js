@@ -439,7 +439,7 @@ var NPMap = {
   fullscreenControl: true,
   hooks: {
     init: function (callback) {
-      L.npmap.util._.appendCssFile('http://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/css/app.css');
+      L.npmap.util._.appendCssFile('https://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/css/app.css');
       new L.Playback(NPMap.config.L, data, null, {
         dateControl: false,
         marker: {
@@ -461,7 +461,7 @@ var NPMap = {
   },
   
   plugins: [{
-    js: 'http://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/libs/LeafletPlayback.min.js'
+    js: 'https://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/libs/LeafletPlayback.min.js'
   }, {
     js: 'https://code.jquery.com/jquery-1.11.0.min.js'
   }],
