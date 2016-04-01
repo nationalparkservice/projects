@@ -6,17 +6,20 @@ var App = {
     var query = $.grep(App.data, function (n, i) {
       return n['Hex ID'] === hexid;
     });
+    var div;
     var ul;
+
     if (query.length > 0) {
       var yearsSurveyed = [];
 
       for (var i = 0; i < query.length; i++) {
         yearsSurveyed.push(query[i]['Survey Year']);
       }
+      div = document.createElement('div');
       ul = document.createElement('ul');
-      var lh = document.createElement('lh');
-      lh.innerHTML = 'Survey Results by Year';
-      ul.appendChild(lh);
+
+      div.innerHTML = '<i>Click on a year below to see survey results</i>';
+      div.appendChild(ul);
 
       for (i = 0; i < yearsSurveyed.length; i++) {
         var li = document.createElement('li');
@@ -46,6 +49,7 @@ var App = {
                 image.setAttribute('src', 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg');
                 document.getElementById('pictureModalLabel').innerHTML = 'Hex ' + data['Hex ID'] + ' ' + data['Survey Year'] + ' Camera Station Photo';
                 photo =
+                  '<div><i>Click the image below to see it full size</i></div>' +
                   '<a data-toggle = "modal" data-target = "#pictureModal">' +
                     '<img src = ' + 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg style="height:200px;max-width:220px !important;">' +
                   '</a>';
@@ -103,7 +107,7 @@ var App = {
         li.appendChild(a);
         ul.appendChild(li);
       }
-      return ul;
+      return div;
     } else {
       return 'Not surveyed';
     }
