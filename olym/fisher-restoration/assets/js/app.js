@@ -25,32 +25,69 @@ var App = {
         a.addEventListener('click', function () {
           var resultIndex;
           var popup = NPMap.config.L._popup;
-          var fields = [
-            '# Fishers Detected',
-            'Black Bear',
-            'Coyote',
-            'Cougar',
-            'Bobcat',
-            'Spotted Skunk',
-            'Weasel'
-          ];
 
           popup._html = popup.getContent();
 
           for (i = 0; i < query.length; i++) {
             if (query[i]['Survey Year'] === Number(this.innerHTML)) {
               resultIndex = i;
-              if (query[i]['# Fishers Detected'] > 0) {
-                fields.push('Gender', 'Fisher ID');
-              }
             }
           }
 
           var yearPopupConfig = {
             'title': 'Hex {{"Hex ID"}} {{"Survey Year"}} Survey Results',
-            'description': {
-              'fields': fields,
-              'format': 'table'
+            'description': function (data) {
+              var html;
+              var photo;
+              var fisherDetails;
+
+              if (data['Fisher Photo']) {
+                var image = document.getElementById('modalImage');
+                image.setAttribute('src', 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg');
+                document.getElementById('pictureModalLabel').innerHTML = 'Hex ' + data['Hex ID'] + ' ' + data['Survey Year'] + ' Camera Station Photo';
+                photo =
+                  '<a data-toggle = "modal" data-target = "#pictureModal">' +
+                    '<img src = ' + 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg style="height:200px;max-width:220px !important;">' +
+                  '</a>';
+              } else {
+                photo = '';
+              }
+
+              if (data['# Fishers Detected'] > 0) {
+                fisherDetails =
+                  '<tr>' +
+                    '<td>Gender</td>' +
+                    '<td>' + data['Gender'] + '</td>' +
+                  '</tr>' +
+                  '<tr>' +
+                  '<tr>' +
+                    '<td>Fisher ID</td>' +
+                    '<td>' + data['Fisher ID'] + '</td>' +
+                  '</tr>' +
+                  '<tr>';
+              } else {
+                fisherDetails = '';
+              }
+
+              html =
+                '<div style = "margin-bottom:10px;text-align:center;">' +
+                  photo +
+                '</div>' +
+                '<table>' +
+                  '<tbody>' +
+                    '<tr>' +
+                      '<td># Fishers Detected</td>' +
+                      '<td>' + data['# Fishers Detected'] + '</td>' +
+                    '</tr>' +
+                    fisherDetails +
+                    '<tr>' +
+                      '<td>Other Species Detected</td>' +
+                      '<td>' + (data['Other Species'] ? data['Other Species'] : 'None') + '</td>' +
+                    '</tr>' +
+                  '</tbody>' +
+                '</table>';
+
+              return html;
             },
             'actions': [{
               'handler': function () {
@@ -61,26 +98,6 @@ var App = {
           };
 
           popup.setContent(popup._resultToHtml(query[resultIndex], yearPopupConfig)).update();
-
-          if (query[resultIndex]['Fisher Photo']) {
-            $('.description tr').each(function () {
-              $(this).find('td').each(function () {
-                if (this.innerHTML === 'Fisher ID') {
-                  var picture = document.createElement('a');
-                  this.parentElement.appendChild(picture);
-                  picture.innerHTML = ' (Picture)';
-                  picture.setAttribute('data-toggle', 'modal');
-                  picture.setAttribute('data-target', '#pictureModal');
-                  picture.addEventListener('click', function () {
-                    var image = document.getElementById('modalImage');
-                    image.setAttribute('src', 'assets/img/' + query[resultIndex]['Survey Year'] + '-' + query[resultIndex]['Hex ID'] + '.jpg');
-                  });
-                  this.appendChild(picture);
-                  document.getElementById('pictureModalLabel').innerHTML = 'Hex ' + query[resultIndex]['Hex ID'] + ' ' + query[resultIndex]['Survey Year'] + ' Camera Station Photo';
-                }
-              });
-            });
-          }
         });
         a.innerHTML = yearsSurveyed[i];
         li.appendChild(a);
