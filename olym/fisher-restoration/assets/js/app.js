@@ -50,7 +50,7 @@ var App = {
                 photo =
                   '<div><i>Click the image below to view it full size</i></div>' +
                   '<a data-toggle = "modal" data-target = "#pictureModal">' +
-                    '<img src = ' + 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg style="height:200px;max-width:220px !important;">' +
+                    '<img src = ' + 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '-thumb.jpg style="height:200px;max-width:220px !important;">' +
                   '</a>';
               } else {
                 photo = '';
