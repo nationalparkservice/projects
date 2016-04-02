@@ -15,6 +15,7 @@ var App = {
       for (var i = 0; i < query.length; i++) {
         yearsSurveyed.push(query[i]['Survey Year']);
       }
+
       div = document.createElement('div');
       ul = document.createElement('ul');
 
@@ -24,11 +25,9 @@ var App = {
       for (i = 0; i < yearsSurveyed.length; i++) {
         var li = document.createElement('li');
         var a = document.createElement('a');
-
         a.addEventListener('click', function () {
           var resultIndex;
           var popup = NPMap.config.L._popup;
-
           popup._html = popup.getContent();
 
           for (i = 0; i < query.length; i++) {
@@ -90,7 +89,6 @@ var App = {
                     '</tr>' +
                   '</tbody>' +
                 '</table>';
-
               return html;
             },
             'actions': [{
@@ -100,13 +98,13 @@ var App = {
               'text': '&#171; Back'
             }]
           };
-
           popup.setContent(popup._resultToHtml(query[resultIndex], yearPopupConfig)).update();
         });
         a.innerHTML = yearsSurveyed[i];
         li.appendChild(a);
         ul.appendChild(li);
       }
+
       return div;
     } else {
       return 'Not surveyed';
@@ -126,7 +124,6 @@ var NPMap = {
   },
   description: '2013-2014 Results of Fisher Camera Trap Surveys',
   div: 'map',
-
   hooks: {
     preinit: function (callback) {
       L.npmap.util._.appendJsFile([
