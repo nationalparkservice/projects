@@ -19,7 +19,7 @@ var App = {
       div = document.createElement('div');
       ul = document.createElement('ul');
 
-      div.innerHTML = '<i>Click on a year below to see survey results</i>';
+      div.innerHTML = '<i>Click on a year below to view survey results</i>';
       div.appendChild(ul);
 
       for (i = 0; i < yearsSurveyed.length; i++) {
@@ -48,7 +48,7 @@ var App = {
                 image.setAttribute('src', 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg');
                 document.getElementById('pictureModalLabel').innerHTML = 'Hex ' + data['Hex ID'] + ' ' + data['Survey Year'] + ' Camera Station Photo';
                 photo =
-                  '<div><i>Click the image below to see it full size</i></div>' +
+                  '<div><i>Click the image below to view it full size</i></div>' +
                   '<a data-toggle = "modal" data-target = "#pictureModal">' +
                     '<img src = ' + 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg style="height:200px;max-width:220px !important;">' +
                   '</a>';
