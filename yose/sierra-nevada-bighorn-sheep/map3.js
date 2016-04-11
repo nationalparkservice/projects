@@ -21,8 +21,8 @@ var NPMap = {
     'mapbox-outdoors'
   ],
   center: {
-    lat: 37.720425,
-    lng: -119.372319
+    lat: 37.777965,
+    lng: -119.317799
   },
   fullscreenControl: true,
   hooks: {
