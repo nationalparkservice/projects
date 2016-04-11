@@ -53,7 +53,7 @@ var NPMap = {
   fullscreenControl: true,
   hooks: {
     init: function (callback) {
-      L.npmap.util._.appendCssFile('http://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/css/app.css');
+      L.npmap.util._.appendCssFile('https://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/css/app.css');
 
       var _colorIdx = 0,
           _colors = [
@@ -124,7 +124,7 @@ var NPMap = {
   },
   
   plugins: [{
-    js: 'http://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/libs/LeafletPlayback.min.js'
+    js: 'https://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/libs/LeafletPlayback.min.js'
   }, {
     js: 'https://code.jquery.com/jquery-1.11.0.min.js'
   }],
@@ -133,5 +133,5 @@ var NPMap = {
 };
 var s = document.createElement('script');
 
-s.src = 'http://www.nps.gov/lib/npmap.js/3.0.8/npmap-bootstrap.min.js';
+s.src = 'https://www.nps.gov/lib/npmap.js/3.0.8/npmap-bootstrap.min.js';
 document.body.appendChild(s);
