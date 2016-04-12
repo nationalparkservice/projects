@@ -454,7 +454,7 @@ var NPMap = {
         tickLen: 3000
       });
       $(document).ready(function () {
-        $('div.leaflet-bottom.leaflet-left').prepend('<p><b>3/28/2015 to 5/17/2015</b></p>');
+        $('div.leaflet-bottom.leaflet-left').prepend('<p><b>EWE S375: 3/28/2015 to 5/17/2015</b></p>');
       });
       callback();
     }
