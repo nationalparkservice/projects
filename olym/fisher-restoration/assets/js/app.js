@@ -48,18 +48,19 @@ var App = {
                 image.setAttribute('src', 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg');
                 image.setAttribute('alt', 'Camera Station Photo of Fisher');
                 document.getElementById('pictureModalLabel').innerHTML = 'Hex ' + data['Hex ID'] + ' ' + data['Survey Year'] + ' Camera Station Photograph';
-                photo =
+                photo = '' +
                   '<div><i>Click the image below to view it full size</i></div>' +
                   '<a data-toggle = "modal" data-target = "#pictureModal">' +
                     '<img src = ' + 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '-thumb.jpg ' +
                       'style="height:200px;max-width:220px !important;" alt="Camera Station Photograph of Fisher">' +
-                  '</a>';
+                  '</a>' +
+                '';
               } else {
                 photo = '';
               }
 
               if (data['# Fishers Detected'] > 0) {
-                fisherDetails =
+                fisherDetails = '' +
                   '<tr>' +
                     '<td>Gender</td>' +
                     '<td>' + data['Gender'] + '</td>' +
@@ -69,12 +70,13 @@ var App = {
                     '<td>Fisher ID</td>' +
                     '<td>' + data['Fisher ID'] + '</td>' +
                   '</tr>' +
-                  '<tr>';
+                  '<tr>' +
+                '';
               } else {
                 fisherDetails = '';
               }
 
-              html =
+              html = '' +
                 '<div style = "margin-bottom:10px;text-align:center;">' +
                   photo +
                 '</div>' +
@@ -90,7 +92,8 @@ var App = {
                       '<td>' + (data['Other Species'] ? data['Other Species'] : 'None') + '</td>' +
                     '</tr>' +
                   '</tbody>' +
-                '</table>';
+                '</table>' +
+              '';
               return html;
             },
             'actions': [{
