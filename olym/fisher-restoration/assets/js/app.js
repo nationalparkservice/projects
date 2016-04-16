@@ -147,6 +147,13 @@ var NPMap = {
     }
   },
   infoboxControl: true,
+  legendControl: {
+    html: '' +
+      '<h3>Legend</h3>' +
+        '<img src="assets/img/legend.svg" width="200" alt="Map Legend">' +
+      '',
+    position: 'bottomright'
+  },
   maxBounds: [
     [45.310, -127.225],
     [49.499, -120.552]
