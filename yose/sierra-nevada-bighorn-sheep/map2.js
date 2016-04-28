@@ -26,7 +26,7 @@ var NPMap = {
     lng: -119.330004
   },
   fullscreenControl: true,
-  scaleControl: {true,
+  scaleControl: {
                   position: 'topright'
                 },
   hooks: {
