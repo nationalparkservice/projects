@@ -27,7 +27,6 @@ var NPMap = {
   },
   fullscreenControl: true,
   scaleControl: true,
-  overviewControl: {layer: 'nps-parkTiles'},
   hooks: {
     init: function (callback) {
       L.npmap.util._.appendCssFile('https://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/css/app.css');
