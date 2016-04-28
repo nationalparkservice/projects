@@ -26,7 +26,9 @@ var NPMap = {
     lng: -119.330004
   },
   fullscreenControl: true,
-  scaleControl: true,
+  scaleControl: {true,
+                  position: 'topright'
+                },
   hooks: {
     init: function (callback) {
       L.npmap.util._.appendCssFile('https://www.nps.gov/npmap/dev/yose/sierra-nevada-bighorn-sheep/assets/css/app.css');
