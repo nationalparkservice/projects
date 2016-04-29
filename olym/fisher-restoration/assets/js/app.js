@@ -129,6 +129,7 @@ var NPMap = {
   },
   description: '2013-2014 Results of Fisher Camera Trap Surveys',
   div: 'map',
+  fullscreenControl: true,
   hooks: {
     preinit: function (callback) {
       L.npmap.util._.appendJsFile([
