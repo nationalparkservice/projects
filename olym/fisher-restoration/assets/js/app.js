@@ -66,11 +66,9 @@ var App = {
                     '<td>' + data['Gender'] + '</td>' +
                   '</tr>' +
                   '<tr>' +
-                  '<tr>' +
                     '<td>Fisher ID</td>' +
                     '<td>' + data['Fisher ID'] + '</td>' +
                   '</tr>' +
-                  '<tr>' +
                 '';
               } else {
                 fisherDetails = '';
