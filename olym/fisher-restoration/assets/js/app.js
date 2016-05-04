@@ -141,7 +141,7 @@ var NPMap = {
           L.npmap.util._.appendCssFile([
             'https://www.nps.gov/lib/bootstrap/3.3.2/css/nps-bootstrap.min.css'
           ], function () {
-            $.getJSON('data/data.json', function (json) {
+            $.getJSON('https://nationalparkservice.github.io/projects/olym/fisher-restoration/data/data.json', function (json) {
               $.each(json, function (key, val) {
                 App.data = json;
               });
@@ -156,7 +156,7 @@ var NPMap = {
   legendControl: {
     html: '' +
       '<h3>Legend</h3>' +
-        '<img src="assets/img/legend.svg" width="200" alt="Map Legend">' +
+        '<img src="https://nationalparkservice.github.io/projects/olym/fisher-restoration/assets/img/legend.svg" width="200" alt="Map Legend">' +
       '',
     position: 'bottomright'
   },
@@ -202,7 +202,7 @@ var NPMap = {
     },
     tooltip: 'Hex ID: {{hexid}}',
     type: 'geojson',
-    url: 'data/hex-grid.geojson'
+    url: 'https://nationalparkservice.github.io/projects/olym/fisher-restoration/data/hex-grid.geojson'
   }],
   title: 'Olympic National Park Fisher Surveys',
   zoom: 9
