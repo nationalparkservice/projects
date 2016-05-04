@@ -45,13 +45,13 @@ var App = {
 
               if (data['Fisher Photo']) {
                 var image = document.getElementById('modalImage');
-                image.setAttribute('src', 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg');
+                image.setAttribute('src', 'https://nationalparkservice.github.io/projects/olym/fisher-restoration/assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '.jpg');
                 image.setAttribute('alt', 'Camera Station Photo of Fisher');
                 document.getElementById('pictureModalLabel').innerHTML = 'Hex ' + data['Hex ID'] + ' ' + data['Survey Year'] + ' Camera Station Photograph';
                 photo = '' +
                   '<div><i>Click the image below to view it full size</i></div>' +
                   '<a data-toggle = "modal" data-target = "#pictureModal">' +
-                    '<img src = ' + 'assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '-thumb.jpg ' +
+                    '<img src = ' + 'https://nationalparkservice.github.io/projects/olym/fisher-restoration/assets/img/' + data['Survey Year'] + '-' + data['Hex ID'] + '-thumb.jpg ' +
                       'style="height:200px;max-width:220px !important;" alt="Camera Station Photograph of Fisher">' +
                   '</a>' +
                 '';
