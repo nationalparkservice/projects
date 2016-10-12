@@ -162,7 +162,7 @@ var NPMap = {
     [45.310, -127.225],
     [49.499, -120.552]
   ],
-  minZoom: 9,
+  minZoom: 8,
   overlays: [{
     popup: {
       title: 'Hex ID: {{hexid}}',
