@@ -203,7 +203,7 @@ var NPMap = {
     url: 'https://nationalparkservice.github.io/projects/olym/fisher-restoration/data/hex-grid.geojson'
   }],
   title: 'Olympic National Park Fisher Surveys',
-  zoom: 9
+  zoom: 8
 };
 
 (function () {
