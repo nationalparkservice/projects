@@ -434,7 +434,7 @@ var NPMap = {
     'nps-parkTilesImagery',
     'nps-parkTilesImageryUSGS',
     'nps-parkTilesLight',
-    'nps-parkTilesSlate',
+    'nps-parkTilesSlate'
   ],
   center: {
     lat: 37.706514,
@@ -474,5 +474,5 @@ var NPMap = {
 };
 var s = document.createElement('script');
 
-s.src = 'https://www.nps.gov/lib/npmap.js/3.0.14/npmap-bootstrap.min.js';
+s.src = 'https://www.nps.gov/lib/npmap.js/4.2.1/npmap-bootstrap.min.js';
 document.body.appendChild(s);
