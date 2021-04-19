@@ -430,7 +430,11 @@ var data = {
 var NPMap = {
   div: 'map',
   baseLayers: [
-    'mapbox-outdoors'
+    'nps-parkTiles',
+    'nps-parkTilesImagery',
+    'nps-parkTilesImageryUSGS',
+    'nps-parkTilesLight',
+    'nps-parkTilesSlate',
   ],
   center: {
     lat: 37.706514,
