@@ -432,7 +432,6 @@ var NPMap = {
   baseLayers: [
     'nps-parkTiles',
     'nps-parkTilesImagery',
-    'nps-parkTilesImageryUSGS',
     'nps-parkTilesLight',
     'nps-parkTilesSlate'
   ],
